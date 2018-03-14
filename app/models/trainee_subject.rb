@@ -1,0 +1,2 @@
+class TraineeSubject < ApplicationRecord
+end
