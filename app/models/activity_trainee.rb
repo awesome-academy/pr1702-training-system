@@ -1,0 +1,2 @@
+class ActivityTrainee < ApplicationRecord
+end

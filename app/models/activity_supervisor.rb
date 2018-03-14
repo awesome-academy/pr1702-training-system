@@ -1,0 +1,2 @@
+class ActivitySupervisor < ApplicationRecord
+end

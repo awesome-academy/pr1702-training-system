@@ -1,0 +1,2 @@
+class Supervior < ApplicationRecord
+end
