@@ -1,0 +1,37 @@
+<header id="header" class="transparent-nav">
+	<div class="container">
+
+		<div class="navbar-header">
+			<!-- Logo -->
+			<div class="navbar-brand">
+				<!-- <a class="logo" href="#">
+					<%#= image_tag('logo-alt.png')%>
+				</a> -->
+
+				<%= link_to image_tag('logo-alt.png'), root_path , class: "logo" %>
+			</div>
+			<!-- /Logo -->
+
+			<!-- Mobile toggle -->
+			<button class="navbar-toggle">
+				<span></span>
+			</button>
+			<!-- /Mobile toggle -->
+		</div>
+
+		<!-- Navigation -->
+		<nav id="nav">
+			<ul class="main-menu nav navbar-nav navbar-right">
+				<li><%= link_to "Home", root_path %></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Courses</a></li>
+				<li><a href="blog.html">Blog</a></li>
+				<li><%= link_to "Contact", contact_path %></li>
+				<li><%= link_to "Log in" , login_path %></li>
+			</ul>
+		</nav>
+		<!-- /Navigation -->
+
+	</div>
+</header>
+<!-- /Header -->
