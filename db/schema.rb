@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20180314122637) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "superviors", force: :cascade do |t|
+  create_table "supervisors", force: :cascade do |t|
     t.string "name"
     t.string "mail"
     t.datetime "created_at", null: false

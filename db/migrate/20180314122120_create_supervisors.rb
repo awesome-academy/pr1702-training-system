@@ -1,6 +1,6 @@
-class CreateSuperviors < ActiveRecord::Migration[5.1]
+class CreateSupervisors < ActiveRecord::Migration[5.1]
   def change
-    create_table :superviors do |t|
+    create_table :supervisors do |t|
       t.string :name
       t.string :mail
       t.datetime :created_at

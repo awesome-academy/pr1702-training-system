@@ -18,6 +18,16 @@
 			</button>
 			<!-- /Mobile toggle -->
 		</div>
+		<%# byebug %>
+		<% if logged_in? %>
+		<nav id="nav">
+			<ul class="main-menu nav navbar-nav navbar-right">
+				<li><%= link_to "Home", root_path %></li>
+				<li><a href="#">My Courses</a></li>
+				<li><%= link_to "Log out" , logout_path, method: :delete %></li>
+			</ul>
+		</nav>
+		<% else %>
 
 		<!-- Navigation -->
 		<nav id="nav">
@@ -30,6 +40,7 @@
 				<li><%= link_to "Log in" , login_path %></li>
 			</ul>
 		</nav>
+		<% end %>
 		<!-- /Navigation -->
 
 	</div>

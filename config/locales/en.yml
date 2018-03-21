@@ -31,3 +31,28 @@
 
 en:
   hello: "Hello world"
+  static_pages: 
+    home:
+      title: "Edusite Free Online Training Courses"
+      slogan: "Libris vivendo eloquentiam ex ius, nec id splendide abhorreant, eu pro alii error homero."
+      get_started: "Get Started!"
+      welcome: "Welcome to Edusite"
+      subtitle: "Libris vivendo eloquentiam ex ius, nec id splendide abhorreant."
+      online_course: "Online Courses"
+      course_subtitle: "Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati."
+      expert_teacher: "Expert Teachers"
+      teacher_subtitle: "Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati."
+      feature: "Community"
+      feature_subtitle: "Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati."
+      explore_course: "Explore Courses"
+      explore_course_subtitle: "Libris vivendo eloquentiam ex ius, nec id splendide abhorreant."
+  sessions:
+    new: 
+      remember_me: "Remember me on this computer"
+  admin: 
+    sessions:
+      new: 
+        remember_me: "Remember me on this computer"
+
+
+  
