@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by mail:params[:session][:email]
     if user && user.authenticate(params[:session][:password])
-      if user.is_trainee?
+      if current_user_is_trainee?
         log_in user
         redirect_to trainee_url(user)
       else
