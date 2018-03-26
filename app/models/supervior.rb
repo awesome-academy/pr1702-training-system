@@ -1,2 +1,0 @@
-class Supervior < ApplicationRecord
-end
