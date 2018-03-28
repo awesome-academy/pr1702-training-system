@@ -1,0 +1,20 @@
+<div class="card mb-4">
+
+	<div class="card-body">
+        <h2 class="card-title">
+        <%= @course.name %>
+        </h2>
+        <h3>detail:</h3>
+        <p class="card-text">
+        	<%= @course.detail %>
+        </p>
+        <h3>List Subjects: </h3> 
+        <% @course.subjects.each do |subject| %>
+        <%= link_to "#{subject.name}", subject_path %>
+        </br>
+        <% end %>
+        <h3>Supervisor: </h3>
+        <h3>Trainee of course: </h3> 
+            
+    </div>
+</div>

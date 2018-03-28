@@ -5,3 +5,76 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+supervisor = Supervior.create(name:  "Teacher A",
+             mail: "nguyenbathe98@gmail.com"
+        	)
+trainee = Trainee.create(name: "Hoc sinh a",
+				mail: "nguyenbathe98@gmail.com")
+subject1 = Subject.create(
+				name: "ruby ",
+				detail: " detail 1"
+				)
+subject2 = Subject.create(
+				name: "php",
+				detail: "detail 2")
+Section.create(subject_id: subject1.id,
+			name: "Bai 1",
+			content: "Noi dung 1"
+			)
+Section.create(subject_id: subject1.id,
+			name: "Bai 2",
+			content: "Noi dung 2"
+			)
+Section.create(subject_id: subject1.id,
+			name: "Bai 3",
+			content: "Noi dung 3"
+			)
+Section.create(subject_id: subject1.id,
+			name: "Bai 4",
+			content: "Noi dung 4"
+			)
+Section.create(subject_id: subject1.id,
+			name: "Bai 5",
+			content: "Noi dung 5"
+			)
+Section.create(subject_id: subject2.id,
+			name: "Bai 6",
+			content: "Noi dung 6"
+			)
+Section.create(subject_id: subject2.id,
+			name: "Bai 7",
+			content: "Noi dung 7"
+			)
+Section.create(subject_id: subject2.id,
+			name: "Bai 8",
+			content: "Noi dung 8"
+			)
+Section.create(subject_id: subject2.id,
+			name: "Bai 9",
+			content: "Noi dung 9"
+			)
+Section.create(subject_id: subject2.id,
+			name: "Bai 10",
+			content: "Noi dung 10"
+			)
+course = Course.create(
+			name: "Lap trinh",
+			detail: " Lap trinh web tai framgia"
+			)
+CourseSubject.create(
+			course_id: course.id,
+			subject_id: subject1.id) 
+CourseSubject.create(
+			course_id: course.id,
+			subject_id: subject2.id)
+
+TraineeCourse.create(
+			trainee_id: trainee.id,
+			course_id: course.id)
+TraineeSubject.create(
+			trainee_id: trainee.id,
+			subject_id: subject1.id)
+TraineeSubject.create(
+			trainee_id: trainee.id,
+			subject_id: subject2.id)
+
