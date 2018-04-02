@@ -8,6 +8,10 @@
         <p class="card-text">
         	<%= @subject.detail %>
         </p>
+        <h3>Supervisor: </h3>
+            <% @subject.supervisor do %>
+            <%= supervisor.name%>
+            <%end%>
         <h3>Section:</h3>
         <p class="card-text">
         	<% @subject.sections.each do |section| %>

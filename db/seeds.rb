@@ -5,11 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-supervisor = Supervior.create(name:  "Teacher A",
-             mail: "nguyenbathe98@gmail.com"
-        	)
-trainee = Trainee.create(name: "Hoc sinh a",
-				mail: "nguyenbathe98@gmail.com")
+trainee = Trainee.create(name: "nguyen ba the",
+				mail: "nguyenbathe@gmail.com",
+				password: "123456",
+				activated: true)
+
 subject1 = Subject.create(
 				name: "ruby ",
 				detail: " detail 1"
@@ -67,14 +67,12 @@ CourseSubject.create(
 CourseSubject.create(
 			course_id: course.id,
 			subject_id: subject2.id)
+TraineeCourse.create( course_id: course.id,
+						trainee_id: trainee.id)
 
-TraineeCourse.create(
-			trainee_id: trainee.id,
-			course_id: course.id)
-TraineeSubject.create(
-			trainee_id: trainee.id,
-			subject_id: subject1.id)
-TraineeSubject.create(
-			trainee_id: trainee.id,
-			subject_id: subject2.id)
 
+supervisor = Supervisor.create(name: "Teacher 1",
+								mail: "teacher1@gamil.com",
+								password: "123456",
+								activated: true,
+								subject_id: subject1.id)

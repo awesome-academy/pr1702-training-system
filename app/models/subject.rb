@@ -4,4 +4,5 @@ class Subject < ApplicationRecord
                                    dependent:   :destroy
     has_many :courses , through: :course_subjects
     has_many :sections, foreign_key: "subject_id"
+    belongs_to :supervisor
 end

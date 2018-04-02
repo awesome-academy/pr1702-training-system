@@ -13,8 +13,10 @@
         <%= link_to "#{subject.name}", subject_path %>
         </br>
         <% end %>
-        <h3>Supervisor: </h3>
         <h3>Trainee of course: </h3> 
-            
+        <% @course.trainees.each do |trainee| %>
+            <%= trainee.name %>
+        <%end%>
+           
     </div>
 </div>
