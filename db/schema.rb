@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314122637) do
+ActiveRecord::Schema.define(version: 20180404124809) do
 
   create_table "activity_supervisors", force: :cascade do |t|
     t.integer "supervisor_id"
@@ -53,18 +53,8 @@ ActiveRecord::Schema.define(version: 20180314122637) do
   end
 
   create_table "supervisors", force: :cascade do |t|
-    t.string "name"
-    t.string "mail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
-    t.string "remember_digest"
-    t.string "activation_digest"
-    t.boolean "activated"
-    t.datetime "activated_at"
-    t.string "reset_digest"
-    t.datetime "reset_sent_at"
-    t.integer "subject_id"
   end
 
   create_table "trainee_courses", force: :cascade do |t|
@@ -92,17 +82,19 @@ ActiveRecord::Schema.define(version: 20180314122637) do
   end
 
   create_table "trainees", force: :cascade do |t|
-    t.string "name"
-    t.string "mail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "mail"
     t.string "password_digest"
     t.string "remember_digest"
-    t.string "activation_digest"
-    t.boolean "activated"
-    t.datetime "activated_at"
-    t.string "reset_digest"
-    t.datetime "reset_sent_at"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mail"], name: "index_users_on_mail", unique: true
   end
 
 end

@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   get "/contact", to: "static_pages#contact"
 
   namespace :admin do
-    get "/login", to: "sessions#new"
-    post "/login",   to: "sessions#create"
     resources :supervisors
   end
 end

@@ -2,10 +2,15 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    trainee = Trainee.find_by mail:params[:session][:email]
-    if trainee && trainee.authenticate(params[:session][:password])
-      log_in trainee
-      redirect_to trainee
+    user = User.find_by mail:params[:session][:email]
+    if user && user.authenticate(params[:session][:password])
+      if user.is_trainee?
+        log_in user
+        redirect_to trainee_url(user)
+      else
+        log_in user
+        redirect_to admin_supervisor_url(user)
+      end
     else
       flash.now[:danger] = "Invalid email/password combination"
       render :new
