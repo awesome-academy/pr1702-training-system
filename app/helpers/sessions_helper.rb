@@ -1,18 +1,23 @@
 module SessionsHelper
-  def log_in trainee
-    session[:trainee_id] = trainee.id
+  def log_in user
+    session[:user] = user.id
   end
 
-  def current_trainee
-    @current_trainee ||= Trainee.find_by id: session[:trainee_id]
+  def current_user
+    @current_user ||= User.find_by id: session[:user]
   end
 
   def logged_in?
-    current_trainee.present?
+    current_user.present?
   end
 
   def log_out
-    session.delete :trainee_id
-    @current_trainee = nil
+    session.delete :user
+    @current_user = nil
   end
+
+  def is_trainee?
+    current_user.is_a? Trainee
+  end
+
 end
