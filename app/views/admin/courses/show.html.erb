@@ -1,0 +1,29 @@
+<div class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title">
+    <%= @course.name %>
+    </h2>
+    <h3><%= t ".detail"%></h3>
+    <p class="card-text">
+      <%= @course.detail %>
+    </p>
+    <h3><%= t ".list_subject" %></h3>
+    <% @course.subjects.each do |subject| %>
+      <%= link_to subject.name, admin_course_subject_path(@course, subject) %>
+    </br>
+    <% end %>
+    <h3><%= t ".accepted_trainee_of_course" %></h3>
+    <% @course.accepted_trainees.each do |trainee| %>
+      <%= trainee.name %>
+    <%end%>
+    <h3><%= t ".pending_trainee_of_course" %></h3>
+    <% @course.pending_trainees.each do |trainee| %>
+      <%= trainee.name %>
+      <%= form_for([:admin, find_trainee_course(trainee, @course)]) do |f| %>
+        <%= hidden_field_tag :course_id, @course.id %>
+        <%= hidden_field_tag :trainee_id, trainee.id %>
+        <%= f.submit t ".accept" , class: "btn btn-primary" %>
+      <% end %>
+    <%end%>
+  </div>
+</div>

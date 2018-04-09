@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404124809) do
+ActiveRecord::Schema.define(version: 20180420115635) do
 
   create_table "activity_supervisors", force: :cascade do |t|
     t.integer "supervisor_id"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 20180404124809) do
     t.integer "section_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "course_subjects", force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id", "subject_id"], name: "index_course_subjects_on_course_id_and_subject_id", unique: true
+    t.index ["course_id"], name: "index_course_subjects_on_course_id"
+    t.index ["subject_id"], name: "index_course_subjects_on_subject_id", unique: true
   end
 
   create_table "courses", force: :cascade do |t|
@@ -52,6 +62,14 @@ ActiveRecord::Schema.define(version: 20180404124809) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "supervisor_courses", force: :cascade do |t|
+    t.integer "supervisor_id"
+    t.integer "course_id"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "supervisors", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -60,7 +78,7 @@ ActiveRecord::Schema.define(version: 20180404124809) do
   create_table "trainee_courses", force: :cascade do |t|
     t.integer "trainee_id"
     t.integer "course_id"
-    t.boolean "completed"
+    t.integer "status", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -68,7 +86,7 @@ ActiveRecord::Schema.define(version: 20180404124809) do
   create_table "trainee_sections", force: :cascade do |t|
     t.integer "trainee_id"
     t.integer "section_id"
-    t.boolean "completed"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -76,7 +94,7 @@ ActiveRecord::Schema.define(version: 20180404124809) do
   create_table "trainee_subjects", force: :cascade do |t|
     t.integer "trainee_id"
     t.integer "subject_id"
-    t.boolean "completed"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

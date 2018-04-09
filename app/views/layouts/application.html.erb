@@ -38,6 +38,9 @@
     <!-- Header -->
     <%= render 'layouts/header' %>
     <!-- Header -->
+    <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
 	<%= yield %>
     <!-- <div class="container">
     </div> -->
@@ -45,6 +48,7 @@
 
     <!-- Footer -->
     <%= render 'layouts/footer' %>
+    <%= debug(params) if Rails.env.development? %>
     <!-- /Footer -->
   </body>
 </html>

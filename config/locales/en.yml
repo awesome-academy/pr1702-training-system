@@ -1,4 +1,14 @@
 en:
+  controllers:
+    application:
+      verify_supervisor:
+        login_supervisor: "Please login as a supervisor"
+      verify_trainee:
+        login_trainee: "Please login as a trainee"
+      load_data:
+        content_not_found: "Content not found"
+      enroll_course:
+        enroll_this_course: "Please enroll this course"
   static_pages:
     home:
       title: "Edusite Free Online Training Courses"
@@ -14,10 +24,47 @@ en:
       feature_subtitle: "Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati."
       explore_course: "Explore Courses"
       explore_course_subtitle: "Libris vivendo eloquentiam ex ius, nec id splendide abhorreant."
+  courses:
+      index:
+        course_list: "Course List"
+      show:
+        list_subject: "List Subject"
+        accepted_trainee_of_course: "Accepted trainees of course"
+        pending_trainee_of_course: "Peding trainees of course"
+        detail: "Detail"
+        pending: "Please wait for accepting to this course"
+        enroll: "Enroll this course"
+  section:
+    show:
+      content: "Content"
+  subject:
+    show:
+      detail: "Detail"
+      supervisor: "Supervisor"
+      section: "Section"
   sessions:
     new:
       remember_me: "Remember me on this computer"
+
   admin:
     sessions:
       new:
         remember_me: "Remember me on this computer"
+    courses:
+      index:
+        course_list: "Course List"
+      show:
+        list_subject: "List Subject"
+        accepted_trainee_of_course: "Accepted trainees of course"
+        pending_trainee_of_course: "Peding trainees of course"
+        detail: "Detail"
+        accept: "Accept"
+    section:
+      show:
+        content: "Content"
+    subject:
+      show:
+        detail: "Detail"
+        supervisor: "Supervisor"
+        section: "Section"
+

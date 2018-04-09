@@ -3,7 +3,7 @@ class CreateTraineeSections < ActiveRecord::Migration[5.1]
     create_table :trainee_sections do |t|
       t.integer :trainee_id
       t.integer :section_id
-      t.boolean :completed
+      t.integer :status, default: 0
 
       t.timestamps
     end

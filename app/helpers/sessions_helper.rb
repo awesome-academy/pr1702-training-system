@@ -16,8 +16,11 @@ module SessionsHelper
     @current_user = nil
   end
 
-  def is_trainee?
+  def verify_trainee?
     current_user.is_a? Trainee
   end
 
+  def verify_supervisor?
+    current_user.is_a? Supervisor
+  end
 end

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1 class="my-4">
+        <%= t ".course_list" %>
+      </h1>
+      <% if @courses.any? %>
+        <% @courses.each do |course| %>
+          <%= render partial: "course", locals: {course: course} %>
+        <% end %>
+      <% end %>
+      <%= will_paginate @courses, renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer %>
+    </div>
+    <div class="col-md-4">
+      <%#= render partial: "search" %>
+    </div>
+  </div>
+</div>
