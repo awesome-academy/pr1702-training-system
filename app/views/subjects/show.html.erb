@@ -1,0 +1,22 @@
+<div class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title">
+    <%= @subject.name %>
+    </h2>
+    <h3>detail:</h3>
+    <p class="card-text">
+      <%= @subject.detail %>
+    </p>
+    <h3>Supervisor: </h3>
+      <% @subject.supervisors.each do |supervisor| %>
+      <%= supervisor.name %>
+      <%end%>
+    <h3>Section:</h3>
+    <p class="card-text">
+      <% @subject.sections.each do |section| %>
+      <%= link_to "#{section.name}", section_path(section) %>
+      </br>
+      <% end %>
+    </p>
+  </div>
+</div>

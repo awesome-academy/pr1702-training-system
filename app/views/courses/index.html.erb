@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1 class="my-4">
+        Courses list
+      </h1>
+      <% @courses.each do |course| %>
+        <%= render partial: "course", locals: {course: course} %>
+      <% end %>
+      <%= will_paginate @courses, renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer %>
+    </div>
+    <div class="col-md-4">
+      <%#= render partial: "search" %>
+    </div>
+  </div>
+</div>
