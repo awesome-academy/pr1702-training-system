@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20180420115635) do
   create_table "subjects", force: :cascade do |t|
     t.string "name"
     t.text "detail"
+    t.boolean "completed", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status"

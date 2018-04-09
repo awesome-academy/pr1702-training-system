@@ -18,5 +18,20 @@
       </br>
       <% end %>
     </p>
+
+    <div id="complete_form">
+      <% if @subject.completed %>
+        <%= form_for @subject, url: admin_course_subject_path(@course, @subject) do |f| %>
+          <div><%= f.hidden_field :completed, value: false %></div>
+          <%= f.submit "Uncomplete", class: "btn btn-primary" %>
+        <% end %>
+      <% else %>
+        <%= form_for @subject, url: admin_course_subject_path(@course, @subject) do |f| %>
+          <div><%= f.hidden_field :completed, value: true %></div>
+          <%= f.submit "Complete", class: "btn btn-primary" %>
+        <% end %>
+      <% end %>
+    </div>
+
   </div>
 </div>

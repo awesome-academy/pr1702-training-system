@@ -9,4 +9,5 @@ class Course < ApplicationRecord
   has_many :subjects, through: :course_subjects
   has_many :supervisor_courses
   has_many :supervisors, through: :supervisor_courses, source: :supervisor
+
 end
