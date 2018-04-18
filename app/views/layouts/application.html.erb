@@ -34,21 +34,15 @@
 
     </head>
   <body>
-
-    <!-- Header -->
-    <%= render 'layouts/header' %>
-    <!-- Header -->
-    <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
+    <%= render "layouts/header" %>
+    <div class="container">
+      <% if flash.present? %>
+        <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, class: "alert alert-#{name}" %>
+        <% end %>
       <% end %>
-	<%= yield %>
-    <!-- <div class="container">
-    </div> -->
-    
-
-    <!-- Footer -->
-    <%= render 'layouts/footer' %>
-    <%= debug(params) if Rails.env.development? %>
-    <!-- /Footer -->
+    </div>
+    <%= yield %>
+    <%= render "layouts/footer" %>
   </body>
 </html>

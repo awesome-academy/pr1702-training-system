@@ -1,0 +1,5 @@
+<%= form_for @subject, url: {action: :update}  do |f| %>
+  <%= f.hidden_field :subject_id, value: @subject.id %>
+  <%= f.hidden_field :trainee_id, value: current_user.id %>
+  <%= f.submit t("views.subjects._complete_form.complete"), class: "btn btn-primary" %>
+<% end %>

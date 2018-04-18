@@ -1,4 +1,4 @@
 class TraineeSubject < ApplicationRecord
-  belong_to :trainee
-  belong_to :subject
+  belongs_to :trainee
+  belongs_to :subject
 end
