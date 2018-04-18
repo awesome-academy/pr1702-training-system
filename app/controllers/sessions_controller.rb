@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         redirect_to admin_supervisor_url(user)
       end
     else
-      flash.now[:danger] = "Invalid email/password combination"
+      flash.now[:danger] = t "Invalid email/password combination"
       render :new
     end
   end

@@ -40,23 +40,37 @@ en:
   sessions:
     new:
       remember_me: "Remember me on this computer"
+    create:
+      invalid_email_password: "Invalid email/password combination"
   admin:
     sessions:
       new:
         remember_me: "Remember me on this computer"
-    courses:
-      index:
-        course_list: "Course List"
-      show:
-        list_subject: "List Subject"
-        trainee_of_course: "Trainees of course"
-        detail: "Detail"
-    section:
-      show:
-        content: "Content"
+  courses:
+    index:
+      course_list: "Course List"
+    show:
+      list_subject: "List Subject"
+      trainee_of_course: "Trainees of course"
+      detail: "Detail"
+  section:
+    show:
+      content: "Content"
+  subject:
+    show:
+      detail: "Detail"
+      supervisor: "Supervisor"
+      section: "Section"
+  controllers:
+    subjects_controller:
+      update:
+        uncompleted_successfully: "Uncompleted successfully"
+        uompleted_successfully: "Completed successfully"
+  views:
     subject:
-      show:
-        detail: "Detail"
-        supervisor: "Supervisor"
-        section: "Section"
+      complete_form:
+        complete: "Complete"
+      uncomplete_form:
+        uncomplete: "Uncomplete"
+
 

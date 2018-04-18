@@ -98,6 +98,9 @@ ActiveRecord::Schema.define(version: 20180420115635) do
     t.boolean "completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_trainee_subjects_on_subject_id"
+    t.index ["trainee_id", "subject_id"], name: "index_trainee_subjects_on_trainee_id_and_subject_id", unique: true
+    t.index ["trainee_id"], name: "index_trainee_subjects_on_trainee_id"
   end
 
   create_table "trainees", force: :cascade do |t|

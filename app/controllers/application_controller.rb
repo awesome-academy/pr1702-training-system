@@ -3,16 +3,17 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   private
+
   def verify_supervisor
     unless verify_supervisor?
-      flash[:danger] = I18n.t "controllers.application.verify_supervisor.login_supervisor"
+      flash[:danger] = t "controllers.application.verify_supervisor.login_supervisor"
       redirect_to login_url
     end
   end
 
   def verify_trainee
     unless verify_trainee?
-      flash[:danger] = I18n.t "controllers.application.verify_trainee.login_trainee"
+      flash[:danger] = t "controllers.application.verify_trainee.login_trainee"
       redirect_to login_url
     end
   end
@@ -23,7 +24,7 @@ class ApplicationController < ActionController::Base
       instance_variable_set(datum, temp)
     end
     return if data.all? { |datum| instance_variable_get(datum).present? }
-    flash[:danger] = I18n.t "controllers.application.load_data.content_not_found"
+    flash[:danger] = t "controllers.application.load_data.content_not_found"
     redirect_to root_url
   end
 end
