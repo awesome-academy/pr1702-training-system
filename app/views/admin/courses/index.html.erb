@@ -4,8 +4,10 @@
       <h1 class="my-4">
         <%= t ".course_list" %>
       </h1>
-      <% @courses.each do |course| %>
-        <%= render partial: "course", locals: {course: course} %>
+      <% if @courses.any? %>
+        <% @courses.each do |course| %>
+          <%= render partial: "course", locals: {course: course} %>
+        <% end %>
       <% end %>
       <%= will_paginate @courses, renderer: WillPaginate::ActionView::Bootstrap4LinkRenderer %>
     </div>

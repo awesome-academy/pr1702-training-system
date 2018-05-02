@@ -1,42 +1,51 @@
-trainee = Trainee.create(name: "nguyen ba the",
-        mail: "nguyenbathe@gmail.com",
-        password: "123456",
-        type: "Trainee")
+3.times do |n|
+  User.create(name: "User#{n}",
+          mail: "user#{n}@gmail.com",
+          password: "123456",
+          type: "Trainee")
+end
 
-subject1 = Subject.create(
-        name: "ruby ",
-        detail: " detail 1"
-        )
-subject2 = Subject.create(
-        name: "php",
-        detail: "detail 2")
+3.times do |n|
+  User.create(name: "Teacher#{n}",
+               mail: "teacher#{n}@gmail.com",
+               password: "123456",
+               type: "Supervisor"
+  )
+end
+
+3.times do |n|
+  Subject.create(
+    name: "subject#{n} ",
+    detail: " detail#{n}"
+  )
+end
 
 10.times do |n|
-  subject_id = n > 4 ? subject2.id : subject1.id
+  subject_id = n / 3
   Section.create subject_id: subject_id, name: "Bai #{n+1}", content: "Noi dung #{n+1}"
 end
 
-course = Course.create(
-      name: "Lap trinh",
-      detail: " Lap trinh web tai framgia"
-      )
+3.times do |n|
+    Course.create(
+        name: "Course#{n}",
+        detail: "Course_detail#{n}"
+    )
+end
 
-CourseSubject.create(
-      course_id: course.id,
-      subject_id: subject1.id)
+Trainee.all.each do |trainee|
+  Course.all.each do |course|
+    TraineeCourse.create course_id: course.id, trainee_id: trainee.id
+  end
+end
 
-CourseSubject.create(
-      course_id: course.id,
-      subject_id: subject2.id)
+Course.all.each do |course|
+  Subject.all.each do |subject|
+    CourseSubject.create subject_id: subject.id, course_id: course.id
+  end
+end
 
-TraineeCourse.create( course_id: course.id,
-            trainee_id: trainee.id)
-
-
-supervisor = User.create(name: "Teacher 1",
-                mail: "teacher1@gmail.com",
-                password: "123456",
-                type: "Supervisor"
-                )
-SubjectSupervisor.create( subject_id: subject1.id,
-            supervisor_id: supervisor.id)
+Course.all.each do |course|
+  Supervisor.all.each do |supervisor|
+    SupervisorCourse.create supervisor_id: supervisor.id, course_id: course.id
+  end
+end
