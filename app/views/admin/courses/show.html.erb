@@ -3,16 +3,16 @@
     <h2 class="card-title">
     <%= @course.name %>
     </h2>
-    <h3>detail:</h3>
+    <h3><%= t ".detail"%></h3>
     <p class="card-text">
       <%= @course.detail %>
     </p>
-    <h3><%= t ".list_subject" %> </h3>
+    <h3><%= t ".list_subject" %></h3>
     <% @course.subjects.each do |subject| %>
-      <%= link_to subject.name, course_subject_path(@course, subject) %>
+      <%= link_to subject.name, admin_course_subject_path(@course, subject) %>
     </br>
     <% end %>
-    <h3><%= t ".trainee_of_course" %> </h3>
+    <h3><%= t ".trainee_of_course" %></h3>
     <% @course.trainees.each do |trainee| %>
       <%= trainee.name %>
     <%end%>

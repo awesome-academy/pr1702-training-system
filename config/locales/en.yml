@@ -1,4 +1,12 @@
 en:
+  controllers:
+    application:
+      verify_supervisor:
+        login_supervisor: "Please login as a supervisor"
+      verify_trainee:
+        login_trainee: "Please login as a trainee"
+      load_data:
+        content_not_found: "Content not found"
   static_pages:
     home:
       title: "Edusite Free Online Training Courses"
@@ -14,6 +22,21 @@ en:
       feature_subtitle: "Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati."
       explore_course: "Explore Courses"
       explore_course_subtitle: "Libris vivendo eloquentiam ex ius, nec id splendide abhorreant."
+  courses:
+      index:
+        course_list: "Course List"
+      show:
+        list_subject: "List Subject"
+        trainee_of_course: "Trainees of course"
+        detail: "Detail"
+  section:
+    show:
+      content: "Content"
+  subject:
+    show:
+      detail: "Detail"
+      supervisor: "Supervisor"
+      section: "Section"
   sessions:
     new:
       remember_me: "Remember me on this computer"
@@ -21,3 +44,19 @@ en:
     sessions:
       new:
         remember_me: "Remember me on this computer"
+    courses:
+      index:
+        course_list: "Course List"
+      show:
+        list_subject: "List Subject"
+        trainee_of_course: "Trainees of course"
+        detail: "Detail"
+    section:
+      show:
+        content: "Content"
+    subject:
+      show:
+        detail: "Detail"
+        supervisor: "Supervisor"
+        section: "Section"
+

@@ -7,14 +7,22 @@ Rails.application.routes.draw do
   get "/contact", to: "static_pages#contact"
 
   resources :trainees
-  resources :courses
-  resources :subjects
-  resources :sections
+  resources :courses do
+    resources :subjects do
+      resources :sections do
+      end
+    end
+  end
   resources :course_subjects, only: :create
 
   namespace :admin do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     resources :supervisors
+    resources :courses do
+      resources :subjects do
+        resources :sections
+      end
+    end
   end
 end

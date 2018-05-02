@@ -14,8 +14,8 @@
     <h3><%= t ".section" %></h3>
     <p class="card-text">
       <% @subject.sections.each do |section| %>
-        <%= link_to section.name, course_subject_section_path(@course, @subject, section) %>
-        </br>
+      <%= link_to section.name, admin_course_subject_section_path(@course, @subject, section) %>
+      </br>
       <% end %>
     </p>
   </div>
