@@ -17,8 +17,7 @@ end
 3.times do |n|
   Subject.create(
     name: "subject#{n} ",
-    detail: " detail#{n}",
-    completed: false
+    detail: " detail#{n}"
   )
 end
 
@@ -43,7 +42,7 @@ end
 
 Course.all.each do |course|
   Subject.all.each do |subject|
-    CourseSubject.create subject_id: subject.id, course_id: course.id
+    CourseSubject.create subject_id: subject.id, course_id: course.id, completed: false
   end
 end
 

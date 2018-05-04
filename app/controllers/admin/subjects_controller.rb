@@ -8,7 +8,9 @@ class Admin::SubjectsController < ApplicationController
   before_action :verify_supervisor, only: [:index, :show]
   before_action -> { load_data(DATA, DATA_MODEL, ID_PARAMS) }, only: :show
 
-  def show;  end
+  def show
+    @course_subject = CourseSubject.find_by subject_id: @subject.id
+  end
 
 
   def create
@@ -18,8 +20,10 @@ class Admin::SubjectsController < ApplicationController
   def update
     @subject = Subject.find_by id: params[:id]
     @course = CourseSubject.find_by id: params[:course_id]
-    if @subject.update_attributes completed: status_subject
+
+    if @course_subject.update_attributes completed: status_subject
     # if @subject.update_attributes completed: !!params[:subject][:completed]
+      @course_subject
       redirect_to admin_course_subject_path(@course, @subject)
     else
       redirect_to admin_course_subject_path(@course, @subject)
@@ -31,8 +35,9 @@ class Admin::SubjectsController < ApplicationController
     params.require(:subject).permit :completed
   end
 
+
   def status_subject
-    params[:subject][:completed] == "true"? true : false
+    params[:course_subject][:completed] == "true"? true : false
   end
 
 end
