@@ -26,4 +26,10 @@ class ApplicationController < ActionController::Base
     flash[:danger] = I18n.t "controllers.application.load_data.content_not_found"
     redirect_to root_url
   end
+  def enroll_course course
+    unless current_user.check_status(course, :accepted)
+      flash[:danger] = I18n.t "controllers.application.enroll_course.enroll_this_course"
+      redirect_to root_url
+    end
+  end
 end
