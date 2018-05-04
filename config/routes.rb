@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/contact", to: "static_pages#contact"
 
+  resources :trainee_courses
   resources :trainees
   resources :courses do
     resources :subjects do
@@ -19,10 +20,12 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     resources :supervisors
+    
     resources :courses do
       resources :subjects do
         resources :sections
       end
     end
+    resources :trainee_courses
   end
 end

@@ -7,14 +7,25 @@
     <p class="card-text">
       <%= @course.detail %>
     </p>
-    <h3><%= t ".list_subject" %> </h3>
-    <% @course.subjects.each do |subject| %>
-      <%= link_to subject.name, course_subject_path(@course, subject) %>
-    </br>
+    <% if current_user.enroll? @course %>
+      <% if current_user.check_status @course, :pending %>
+        <h3><%= t ".pending" %></h3>
+      <% else %>
+        <h3><%= t ".list_subject" %> </h3>
+        <% @course.subjects.each do |subject| %>
+          <%= link_to subject.name, course_subject_path(@course, subject) %>
+        </br>
+      <% end %>
+        <h3><%= t ".trainee_of_course" %> </h3>
+        <% @course.accepted_trainees.each do |trainee| %>
+          <%= trainee.name %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <%= form_for current_user.trainee_courses.build do |f| %>
+        <%= hidden_field_tag :course_id, @course.id %>
+        <%= f.submit t ".enroll", class: "btn btn-primary" %>
+      <% end %>
     <% end %>
-    <h3><%= t ".trainee_of_course" %> </h3>
-    <% @course.trainees.each do |trainee| %>
-      <%= trainee.name %>
-    <%end%>
   </div>
 </div>
