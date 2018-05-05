@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20180420115635) do
   create_table "course_subjects", force: :cascade do |t|
     t.integer "course_id"
     t.integer "subject_id"
+    t.boolean "completed", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["course_id", "subject_id"], name: "index_course_subjects_on_course_id_and_subject_id", unique: true

@@ -12,4 +12,5 @@ class Admin::SectionsController < ApplicationController
 
   def show;  end
 
+
 end

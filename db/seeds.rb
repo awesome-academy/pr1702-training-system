@@ -5,6 +5,7 @@
           type: "Trainee")
 end
 
+
 3.times do |n|
   User.create(name: "Teacher#{n}",
                mail: "teacher#{n}@gmail.com",
@@ -19,6 +20,7 @@ end
     detail: " detail#{n}"
   )
 end
+
 
 10.times do |n|
   subject_id = n / 3
@@ -40,7 +42,7 @@ end
 
 Course.all.each do |course|
   Subject.all.each do |subject|
-    CourseSubject.create subject_id: subject.id, course_id: course.id
+    CourseSubject.create subject_id: subject.id, course_id: course.id, completed: false
   end
 end
 

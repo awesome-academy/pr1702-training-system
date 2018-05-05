@@ -1,4 +1,5 @@
 class Admin::CoursesController < ApplicationController
+
   ID_PARAMS = {:@course => :id}
   DATA_MODEL = {:@course => :Course}
   DATA = [:@course]
@@ -11,4 +12,5 @@ class Admin::CoursesController < ApplicationController
   end
 
   def show;  end
+
 end
