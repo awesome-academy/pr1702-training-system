@@ -20,6 +20,7 @@
     </p>
 
     <div id="complete_form">
+    
       <% if @course_subject.completed %>
         <%= form_for @course_subject, url: admin_course_subject_path(@course, @subject) do |f| %>
           <div><%= f.hidden_field :completed, value: false %></div>

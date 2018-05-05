@@ -9,7 +9,8 @@ class Admin::SubjectsController < ApplicationController
   before_action -> { load_data(DATA, DATA_MODEL, ID_PARAMS) }, only: :show
 
   def show
-    @course_subject = CourseSubject.find_by subject_id: @subject.id
+    @course_subject = CourseSubject.find_by subject_id: @subject.id , course_id: @course.id
+
   end
 
 
@@ -19,11 +20,10 @@ class Admin::SubjectsController < ApplicationController
 
   def update
     @subject = Subject.find_by id: params[:id]
-    @course = CourseSubject.find_by id: params[:course_id]
-
+    @course = Course.find_by id: (CourseSubject.find_by params[:@subject_id])
+    @course_subject = CourseSubject.find_by subject_id: @subject.id , course_id: @course.id
     if @course_subject.update_attributes completed: status_subject
     # if @subject.update_attributes completed: !!params[:subject][:completed]
-      @course_subject
       redirect_to admin_course_subject_path(@course, @subject)
     else
       redirect_to admin_course_subject_path(@course, @subject)
