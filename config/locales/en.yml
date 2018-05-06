@@ -7,6 +7,8 @@ en:
         login_trainee: "Please login as a trainee"
       load_data:
         content_not_found: "Content not found"
+      enroll_course:
+        enroll_this_course: "Please enroll this course"
   static_pages:
     home:
       title: "Edusite Free Online Training Courses"
@@ -27,8 +29,11 @@ en:
         course_list: "Course List"
       show:
         list_subject: "List Subject"
-        trainee_of_course: "Trainees of course"
+        accepted_trainee_of_course: "Accepted trainees of course"
+        pending_trainee_of_course: "Peding trainees of course"
         detail: "Detail"
+        pending: "Please wait for accepting to this course"
+        enroll: "Enroll this course"
   section:
     show:
       content: "Content"
@@ -40,6 +45,7 @@ en:
   sessions:
     new:
       remember_me: "Remember me on this computer"
+
   admin:
     sessions:
       new:
@@ -49,8 +55,10 @@ en:
         course_list: "Course List"
       show:
         list_subject: "List Subject"
-        trainee_of_course: "Trainees of course"
+        accepted_trainee_of_course: "Accepted trainees of course"
+        pending_trainee_of_course: "Peding trainees of course"
         detail: "Detail"
+        accept: "Accept"
     section:
       show:
         content: "Content"
