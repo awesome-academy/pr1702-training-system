@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       end
     end
   end
+
   resources :course_subjects, only: :create
 
   namespace :admin do

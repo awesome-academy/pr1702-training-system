@@ -44,19 +44,31 @@ en:
     sessions:
       new:
         remember_me: "Remember me on this computer"
-    courses:
-      index:
-        course_list: "Course List"
-      show:
-        list_subject: "List Subject"
-        trainee_of_course: "Trainees of course"
-        detail: "Detail"
-    section:
-      show:
-        content: "Content"
-    subject:
-      show:
-        detail: "Detail"
-        supervisor: "Supervisor"
-        section: "Section"
+  courses:
+    index:
+      course_list: "Course List"
+    show:
+      list_subject: "List Subject"
+      trainee_of_course: "Trainees of course"
+      detail: "Detail"
+  section:
+    show:
+      content: "Content"
+  subject:
+    show:
+      detail: "Detail"
+      supervisor: "Supervisor"
+      section: "Section"
+  controllers:
+    subjects_controller:
+      update:
+        Uncompleted_successfully: "Uncompleted successfully"
+        Completed_successfully: "Completed successfully"
+  views:
+    subjects:
+      _complete_form:
+        complete: "Complete"
+      _uncomplete_form:
+        uncomplete: "Uncomplete"
+
 

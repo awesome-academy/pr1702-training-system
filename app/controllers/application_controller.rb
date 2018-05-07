@@ -3,20 +3,19 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   private
+
   def verify_supervisor
     unless verify_supervisor?
       flash[:danger] = I18n.t "controllers.application.verify_supervisor.login_supervisor"
       redirect_to login_url
     end
   end
-
   def verify_trainee
     unless verify_trainee?
       flash[:danger] = I18n.t "controllers.application.verify_trainee.login_trainee"
       redirect_to login_url
     end
   end
-
   def load_data data, data_model, id_params
     data.each do |datum|
       temp =  Object.const_get(data_model[datum]).send :find_by, id: params[id_params[datum]]

@@ -13,3 +13,8 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery
+//= require jquery_ujs
+setTimeout(function() {
+  $('.alert').fadeOut('fast');
+}, 2000);

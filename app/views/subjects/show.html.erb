@@ -18,5 +18,12 @@
         </br>
       <% end %>
     </p>
+    <h3>
+      <% if @trainee_subject.completed? %>
+        <%= render "uncomplete_form" %>
+      <% else %>
+        <%= render "complete_form" %>
+      <% end  %>
+    </h3>
   </div>
 </div>

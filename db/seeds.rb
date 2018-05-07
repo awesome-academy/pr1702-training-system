@@ -44,6 +44,12 @@ Course.all.each do |course|
   end
 end
 
+Trainee.all.each do |trainee|
+  Subject.all.each do |subject|
+    TraineeSubject.create subject_id: subject.id, trainee_id: trainee.id
+  end
+end
+
 Course.all.each do |course|
   Supervisor.all.each do |supervisor|
     SupervisorCourse.create supervisor_id: supervisor.id, course_id: course.id
