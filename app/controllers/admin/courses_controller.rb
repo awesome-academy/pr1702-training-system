@@ -1,4 +1,6 @@
 class Admin::CoursesController < ApplicationController
+  include Admin::CoursesHelper
+
   ID_PARAMS = {:@course => :id}
   DATA_MODEL = {:@course => :Course}
   DATA = [:@course]
@@ -7,7 +9,7 @@ class Admin::CoursesController < ApplicationController
   before_action -> { load_data(DATA, DATA_MODEL, ID_PARAMS) }, only: :show
 
   def index
-    @courses = current_user.courses.paginate page: params[:page]
+    @courses = Course.load_data.paginate page: params[:page]
   end
 
   def show;  end

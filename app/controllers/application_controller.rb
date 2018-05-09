@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   private
+  
   def verify_supervisor
     unless verify_supervisor?
       flash[:danger] = I18n.t "controllers.application.verify_supervisor.login_supervisor"
@@ -25,5 +26,12 @@ class ApplicationController < ActionController::Base
     return if data.all? { |datum| instance_variable_get(datum).present? }
     flash[:danger] = I18n.t "controllers.application.load_data.content_not_found"
     redirect_to root_url
+  end
+
+  def enroll_course course
+    if !current_user.enroll? course || current_user.check_status(course, :pending)
+      flash[:danger] = I18n.t "controllers.application.enroll_course.enroll_this_course"
+      redirect_to root_url
+    end
   end
 end
